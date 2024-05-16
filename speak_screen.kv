@@ -1,0 +1,131 @@
+#: import Colors settings.colors.Colors
+
+<Speak_Screen>:
+    name: "speak_screen"
+    md_bg_color: Colors.den
+    orientation: 'vertical'
+    padding: '5dp'
+    spacing: '10dp'
+
+    FloatLayout:
+        pos_hint: {"center_x": .5, "center_y": .89}
+        size_hint: None, None
+        size: root.width * 0.8, "105dp"
+        canvas:
+            Color:
+                rgba: get_color_from_hex("2F406C")
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [25, 25, 25, 25]
+            Color:
+                rgba: Colors.do
+            Line:
+                width: 2
+                rounded_rectangle: (self.x, self.y, self.width, self.height, 25)
+
+    MDLabel:
+        id: total_word_count_label
+        text: ""
+        halign: "center"
+        pos_hint: {"center_y": .93}
+        font_size: sp(30)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.white
+
+    MDLabel:
+        id: word_count_label
+        text: ""
+        halign: "center"
+        pos_hint: {"center_y":.85}
+        font_size: sp(26)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.white
+
+    MDLabel:
+        id: current_file_label
+        text: ""
+        halign: "center"
+        pos_hint: {"center_y":.64}
+        font_size: sp(120)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.vang1
+        elevation: 2
+
+    MDBoxLayout:
+        adaptive_height: True
+        height: dp(12)
+        padding: dp(20), 0
+        pos_hint: {"center_y": 0.46}
+        MDSlider:
+            id: progress_slider
+            min: 0
+            max: 1
+            value: 0
+            hint: True
+            hint_radius: [6, 0, 6, 0]
+            hint_bg_color: Colors.do
+            hint_text_color: Colors.white
+            thumb_color_active: Colors.vang
+            thumb_color_inactive: Colors.vang1
+            track_color_active: Colors.hong
+            on_touch_down: root.slider_touch_down(*args)
+            on_touch_move: root.slider_touch_move(*args)
+            on_touch_up: root.slider_touch_up(*args)
+
+    MDIconButton:
+        id: play_button
+        icon: 'play'
+        on_release: root.play_pause()
+        md_bg_color: Colors.vang1
+        pos_hint: {"center_x": 0.5, "center_y": 0.38}
+
+    MDRectangleFlatIconButton:
+        id: name_audio
+        text: ""
+        size_hint_x: None
+        width: dp(100)
+        pos_hint: {'center_x': .5, 'center_y': .28}
+        on_release: root.show_category()
+        # on_release: root.show_confirmation_dialog()
+        on_release: app.screen_manager.change_screen("apple_screen")
+        theme_text_color: "Custom"
+
+    MDLabel:
+        id: index_word
+        text: ""
+        font_size: '16sp'
+        halign: "center"
+        font_size: '26sp'
+        pos_hint: {"center_x":0.5, "center_y":0.2}
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDBoxLayout:
+        adaptive_height: True
+        height: dp(30)
+        orientation: "horizontal"
+        pos_hint: {"center_x":0.5, "center_y":0.15}
+        padding: dp(120), 0, dp(120), 0
+
+        MDTextField:
+            id: current_index_text
+            hint_text: ""
+            pos_hint: {"center_x":0.5, "center_y":0.13}
+            size_hint_x: .8
+
+        MDRaisedButton:
+            id: copy_link
+            text: ""
+            size_hint_x: .2
+            on_release: root.copy_link()
+
+    MDLabel:
+        id: copyright_activatived
+        text: ""
+        markup: True
+        halign: "center"
+        pos_hint: {"center_y":0.05}

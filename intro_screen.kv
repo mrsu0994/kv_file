@@ -1,0 +1,32 @@
+#: import Colors settings.colors.Colors
+
+<Intro_Screen>:
+    name: "intro"
+    md_bg_color: Colors.white
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(5), dp(5)
+        
+
+        MDBoxLayout:
+            size_hint_y: .9
+            AsyncImage:
+                id: link_image
+                source: 'https://raw.githubusercontent.com/mrsu0993/Images/master/bg1.png'
+
+        MDBoxLayout:
+            size_hint_y: .1
+            padding: 0, 0, dp(40), dp(20)
+            
+            MDBoxLayout:
+                size_hint_x: .8
+
+            MDBoxLayout:
+                size_hint_x: .2
+                MDRaisedButton:
+                    text: "Next"
+                    md_bg_color: "red"
+                    size_hint: dp(1), dp(1)
+                    on_release: root.next_image()
+                

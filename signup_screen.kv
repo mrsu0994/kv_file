@@ -1,0 +1,82 @@
+#: import Colors settings.colors.Colors
+
+<Signup_Screen>:
+    name: "signup_screen"
+    md_bg_color: Colors.den
+
+    MDLabel:
+        text: app.APP_NAME
+        halign: "center"
+        pos_hint: {"center_y": .86}
+        font_style: "Subtitle2"
+        font_size: sp(80)
+        theme_text_color: "Custom"
+        text_color: Colors.vang1
+        elevation: 10
+
+    MDLabel:
+        text: "Sign Up"
+        halign: "center"
+        pos_hint: {"center_y":.69}
+        font_style: "Subtitle2"
+        font_size: sp(40)
+        theme_text_color: "Custom"
+        text_color: Colors.black
+  
+    MDTextField:
+        id: fullname
+        hint_text: "Full Name"
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        size_hint: .5, 0.11
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        normal_color: Colors.vang1
+
+    MDTextField:
+        id: phone
+        hint_text: "Phone"
+        pos_hint: {"center_x":0.5, "center_y":0.52}
+        size_hint: .5, 0.11
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        normal_color: Colors.vang1
+
+    MDTextField:
+        id: email
+        hint_text: "Email"
+        pos_hint: {"center_x":0.5, "center_y":0.44}
+        size_hint: .5, 0.11
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        normal_color: Colors.vang1
+
+    MDTextField:
+        id: password
+        hint_text: "Password"
+        pos_hint: {"center_x":0.5, "center_y":0.36}
+        size_hint: .5, 0.11
+        password: True
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        normal_color: Colors.vang1
+    
+    MDRaisedButton:
+        text: "Sign up"
+        pos_hint: {"center_x": 0.5, "center_y":0.25}
+        size_hint: .2, 0.05
+        theme_text_color: "Custom"
+        text_color: Colors.black
+        md_bg_color: Colors.vang1
+        on_release: root.check_user_signup()
+
+    MDTextButton:
+        text: f"[color=#000000]Have an account?[/color] Log in"
+        markup: True
+        pos_hint: {"center_x":0.5, "center_y":0.15}
+        on_release: app.screen_manager.change_screen("login_screen")
+
+    MDLabel:
+        text: f"[font=Icons] {md_icons['copyright']}[/font]  [font=Roboto]{app.COMPANY_NAME} 2020[/font]"
+        markup: True
+        halign: "center"
+        pos_hint: {"center_y":0.05}

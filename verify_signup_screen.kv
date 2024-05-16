@@ -1,0 +1,58 @@
+#: import Colors settings.colors.Colors
+
+<Verify_Signup_Screen>:
+    name: "verify_signup_screen"
+    md_bg_color: Colors.den
+    MDLabel:
+        text: app.APP_NAME
+        halign: "center"
+        pos_hint: {"center_y": .86}
+        font_style: "Subtitle2"
+        font_size: sp(80)
+        theme_text_color: "Custom"
+        text_color: Colors.vang1
+        elevation: 10
+
+    MDLabel:
+        text: "Email verification code"
+        halign: "center"
+        pos_hint: {"center_y":.69}
+        font_style: "Subtitle2"
+        font_size: sp(40)
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDLabel:
+        text: "Một mã xác thực đã gửi đến email của bạn, hãy nhập vào bên dưới"
+        halign: "center"
+        pos_hint: {"center_y":.58}
+        font_style: "Subtitle2"
+        font_size: sp(20)
+        theme_text_color: "Custom"
+        text_color: Colors.white
+  
+    MDTextField:
+        id: verify_email
+        hint_text: "Enter email code"
+        pos_hint: {"center_x": 0.5, "center_y": 0.48}
+        size_hint_x: None
+        width: dp(320)
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        #mode: "rectangle"
+        #normal_color: Colors.white
+    
+    MDRaisedButton:
+        text: "Verify"
+        pos_hint: {"center_x": 0.5, "center_y":0.35}
+        size_hint: .2, 0.05
+        theme_text_color: "Custom"
+        text_color: Colors.black
+        md_bg_color: Colors.vang1
+        on_release: root.verify_email_signup()
+
+    MDLabel:
+        text: f"[font=Icons] {md_icons['copyright']}[/font]  [font=Roboto]{app.COMPANY_NAME} 2020[/font]"
+        markup: True
+        halign: "center"
+        pos_hint: {"center_y":0.05}

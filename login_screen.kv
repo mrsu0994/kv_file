@@ -1,0 +1,70 @@
+#: import Colors settings.colors.Colors
+
+<Login_Screen>:
+    name: "login_screen"
+    md_bg_color: Colors.den
+
+    MDLabel:
+        text: app.APP_NAME
+        halign: "center"
+        pos_hint: {"center_y": .86}
+        font_style: "Subtitle2"
+        font_size: sp(80)
+        theme_text_color: "Custom"
+        text_color: Colors.vang1
+        elevation: 10
+
+    MDLabel:
+        text: "Sign Up"
+        halign: "center"
+        pos_hint: {"center_y":.69}
+        font_style: "Subtitle2"
+        font_size: sp(40)
+        theme_text_color: "Custom"
+        text_color: Colors.black
+ 
+    MDTextField:
+        id: email
+        hint_text: "Email"
+        pos_hint: {"center_x": 0.5, "center_y": 0.58}
+        size_hint: .5, 0.11
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        normal_color: Colors.vang1
+
+    MDTextField:
+        id: password
+        hint_text: "Password"
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        size_hint: .5, 0.11
+        password: True
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        #mode: "rectangle"
+        normal_color: Colors.vang1
+
+    MDRaisedButton:
+        text: "Login"
+        pos_hint: {"center_x": 0.5, "center_y":0.37}
+        size_hint: .2, 0.05
+        on_release: root.check_user_login()
+        theme_text_color: "Custom"
+        text_color: Colors.black
+        md_bg_color: Colors.vang1
+
+    MDTextButton:
+        text: "Forgot password?"
+        pos_hint: {"center_x":0.5, "center_y":0.25}
+        on_release: app.screen_manager.change_screen("forgot_pass_screen")
+
+    MDTextButton:
+        text: f"[color=#000000]Don't have an account?[/color] Sign up"
+        markup: True
+        pos_hint: {"center_x":0.5, "center_y":0.2}
+        on_release: app.screen_manager.change_screen("signup_screen")
+
+    MDLabel:
+        text: "@SuSpeak Copyright 2024"
+        markup: True
+        halign: "center"
+        pos_hint: {"center_y":0.05}

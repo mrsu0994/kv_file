@@ -1,0 +1,38 @@
+#: import Colors settings.colors.Colors
+
+<Dialogs>:
+    MDBoxLayout:
+        md_bg_color: Colors.white
+        orientation: "vertical"
+        radius: 10
+        adaptive_height: True
+        height: dp(250)
+        padding: dp(10)
+
+        MDSeparator:
+            size_hint_y: None
+            height: "100dp"
+            padding: dp(0), dp(10), 0, dp(10)
+            md_bg_color: Colors.white
+            
+            BoxLayout:
+                orientation: "vertical"
+                
+                MDLabel:
+                    text: "Thông báo"
+                    theme_text_color: "Custom"
+                    text_color: Colors.den
+                    pos_hint: {'center_x': 0.5,'center_y': 0.9}
+                    font_size: sp(20)
+
+                MDSeparator:
+                    size_hint_y: None
+                    height: "20dp"
+                    
+                    md_bg_color: Colors.white
+
+                MDLabel:
+                    id: infomation
+                    text: "Vui lòng điền đầy đủ thông tin"
+                    theme_text_color: "Custom"
+                    text_color: Colors.do

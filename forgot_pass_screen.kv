@@ -1,0 +1,75 @@
+#: import Colors settings.colors.Colors
+
+<Forgot_Pass_Screen>:
+    name: "forgot_pass_screen"
+    md_bg_color: Colors.den
+    MDLabel:
+        text: app.APP_NAME
+        halign: "center"
+        pos_hint: {"center_y": .86}
+        font_style: "Subtitle2"
+        font_size: sp(80)
+        theme_text_color: "Custom"
+        text_color: Colors.vang1
+        elevation: 10
+
+    MDLabel:
+        text: "Enter Email and Phone"
+        halign: "center"
+        pos_hint: {"center_y":.69}
+        font_style: "Subtitle2"
+        font_size: sp(40)
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDLabel:
+        text: "Hãy nhập email, phone để chúng tôi gửi mã xác thực cho bạn"
+        halign: "center"
+        pos_hint: {"center_y":.58}
+        font_style: "Subtitle2"
+        font_size: sp(20)
+        theme_text_color: "Custom"
+        text_color: Colors.white
+
+    MDTextField:
+        id: email
+        hint_text: "Enter A Email"
+        size_hint_x: None
+        width: dp(320)
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        pos_hint: {"center_x": 0.5, "center_y": 0.48}
+        #mode: "rectangle"
+        #normal_color: Colors.do
+
+    MDTextField:
+        id: phone
+        hint_text: "Enter Number Phone"
+        size_hint_x: None
+        width: dp(320)
+        color_mode: 'custom'
+        line_color_focus: Colors.vang1
+        pos_hint: {"center_x": 0.5, "center_y": 0.39}
+        #mode: "rectangle"
+        #normal_color: Colors.do
+    
+    MDRaisedButton:
+        text: "Send Email and Phone"
+        pos_hint: {"center_x": 0.5, "center_y":0.25}
+        size_hint: .2, 0.05
+        theme_text_color: "Custom"
+        text_color: Colors.black
+        md_bg_color: Colors.vang1
+        on_release: root.verify_email_signup()
+
+    MDTextButton:
+        text: f"[color=#000000]Have an account?[/color] Log in"
+        markup: True
+        pos_hint: {"center_x":0.5, "center_y":0.16}
+        on_release: app.screen_manager.change_screen("login_screen")
+
+    MDLabel:
+        text: f"[font=Icons] {md_icons['copyright']}[/font]  [font=Roboto]{app.COMPANY_NAME} 2020[/font]"
+        markup: True
+        halign: "center"
+        pos_hint: {"center_y":0.05}

@@ -1,0 +1,20 @@
+#: import Colors settings.colors.Colors
+
+<Dropdown_Dialog>:
+    size_hint: None, None
+    size: "800dp", "500dp"
+    auto_dismiss: True
+    title: "Chose file audio"
+    type: "confirmation"
+    items: root.list_name
+
+
+<ItemConfirm>
+    on_release: root.set_icon(check)
+
+    CheckboxLeftWidget:
+        id: check
+        group: "check"
+
+# <OneLineListItem>:
+#     on_release: app.root.select_audio(self.text)

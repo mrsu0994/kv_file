@@ -1,0 +1,115 @@
+#: import Colors settings.colors.Colors
+
+<Copyright_Buy_Screen>:
+    name: "copyright_buy_screen"
+    md_bg_color: Colors.white
+    orientation: 'vertical'
+    padding: '5dp'
+    spacing: '10dp'
+
+    MDIconButton:
+        #text: "Quay lại"
+        icon: "arrow-left"
+        theme_icon_color: "Custom"
+        icon_color: Colors.black
+        md_bg_color: Colors.vang1
+        color: Colors.do
+        halign: "center"
+        pos_hint: {'center_x': 0.06,'center_y': 0.93}
+        font_size: sp(13)
+        elevation: 3
+        on_release: app.screen_manager.change_screen("copyright_screen")
+
+    MDLabel:
+        id: total_word_count_label
+        text: "Để mua bản quyền"
+        halign: "center"
+        pos_hint: {"center_y": .92}
+        font_size: sp(30)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDLabel:
+        id: total_word_count_label
+        text: "Hãy chuyển khoản vào số tài khoản sau (VIETCOMBANK)"
+        halign: "center"
+        pos_hint: {"center_y": .83}
+        font_size: sp(27)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDLabel:
+        id: word_count_label
+        text: "NGUYỄN VĂN SỰ"
+        halign: "center"
+        pos_hint: {"center_y":.69}
+        font_size: sp(35)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.do
+
+    MDLabel:
+        id: word_count_label
+        text: "0 3 8 1 0 0 0 4 7 4 3 0 2"
+        halign: "center"
+        pos_hint: {"center_y":.60}
+        font_size: sp(35)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.do
+
+    MDLabel:
+        id: word_count_label
+        text: "Có 2 lựa chọn bản quyền"
+        halign: "center"
+        pos_hint: {"center_y":.48}
+        font_size: sp(25)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDRaisedButton:
+        text: "VIP :  $200 / 1 năm"
+        color: Colors.do
+        halign: "center"
+        pos_hint: {'center_x': 0.5,'center_y': 0.38}
+        font_size: sp(25)
+
+    MDRaisedButton:
+        text: "STANDAR :  $160 / 1 năm"
+        color: Colors.do
+        halign: "center"
+        pos_hint: {'center_x': 0.5,'center_y': 0.27}
+        font_size: sp(25)
+
+    MDLabel:
+        id: word_count_label
+        text: "Chuyển khoản xong, GỌI SỐ: 0 7 9 8 7 1 7 3 2 4 để xác nhận"
+        halign: "center"
+        pos_hint: {"center_y":.18}
+        font_size: sp(17)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.do
+
+    MDLabel:
+        id: word_count_label
+        text: "VIP: Hỗ trợ bạn tạo các file nói theo yêu cầu chủ đề bạn muốn"
+        halign: "center"
+        pos_hint: {"center_y":.11}
+        font_size: sp(15)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.black
+
+    MDLabel:
+        id: word_count_label
+        text: "STANDAR: phần mềm có file nói nào thì bạn dùng file nói đó"
+        halign: "center"
+        pos_hint: {"center_y": .06}
+        font_size: sp(15)
+        size_hint_y: None
+        theme_text_color: "Custom"
+        text_color: Colors.black
