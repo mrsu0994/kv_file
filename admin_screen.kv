@@ -1,0 +1,584 @@
+#: import BottomBar components.uix.bottombar.BottomBar
+#: import Tab components.uix.tab.Tab
+#: import Colors settings.colors.Colors
+
+<Admin_Screen>:
+    name: "admin_screen"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        # (I)
+        MDBoxLayout:
+            orientation: "vertical"
+            MDTabs:
+                id: tab_moi
+                background_color: Colors.white
+                text_color_normal: Colors.den
+                text_color_active: Colors.black
+                indicator_color: Colors.black
+                tab_bar_height: "35dp"
+                font_size: "6sp"
+
+                Tab:
+                    title:'Audio'
+                    MDFloatLayout:
+
+                        MDBoxLayout:
+                            orientation: "horizontal"
+                            padding: "10dp"
+                            pos_hint: {"center_x": .5, "center_y": .9}
+                            size_hint: 1, .2
+                            padding: dp(40)
+                            spacing: '20dp'
+                            MDTextField:
+                                id: link_texts
+                                hint_text: "Nhập link"
+                                text: ""
+                                helper_text_mode: "on_focus"
+                                
+                            MDRaisedButton:
+                                text: "Search"
+                                on_press: root.search_links()
+                                pos_hint: {"center_y": .7}
+                            
+                        FloatLayout:
+                            pos_hint: {"center_x": .5, "center_y": .45}
+                            size_hint: None, None
+                            size: root.width * 0.8, "400dp"
+                            canvas:
+                                Color:
+                                    rgba: get_color_from_hex("2F406C")
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [25, 25, 25, 25]
+                                Color:
+                                    rgba: Colors.do
+                                Line:
+                                    width: 2
+                                    rounded_rectangle: (self.x, self.y, self.width, self.height, 25)
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .9}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "account-group"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    text: "Customer"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDDropDownItem:
+                                        id: customer_audio
+                                        pos_hint: {'center_x': .5, 'center_y': .5}
+                                        text: 'Khách hàng'
+                                        on_release: root.customer_menu_audio()
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .75}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "email"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDTextField:
+                                    id: email_audio
+                                    text: ""
+                                    hint_text: "nhập email"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: email_audio_switch
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: False
+                                        on_active: root.email_audio_switchs()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .6}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "link"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDTextField:
+                                    id: link_audio
+                                    text: ""
+                                    hint_text: "nhập link mới"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: link_audio_switch
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: False
+                                        on_active: root.link_audio_switchs()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .45}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "volume-high"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDTextField:
+                                    id: name_audio
+                                    text: ""
+                                    hint_text: "nhập tên phân đoạn Git"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: name_audio_switch
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: False
+                                        on_active: root.name_audio_switchs()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .3}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "git"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDTextField:
+                                    id: git_audio
+                                    text: ""
+                                    hint_text: "nhập git name mới"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: git_audio_switch
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: False
+                                        on_active: root.git_audio_switchs()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .15}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "rename-box"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDTextField:
+                                    id: title_audio
+                                    text: ""
+                                    hint_text: "nhập tên audio mới"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: title_audio_switch
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: False
+                                        on_active: root.title_audio_switchs()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                Tab:
+                    title:'List Audio'
+                    id: list_document
+                    MDScrollView:
+                        MDList:
+                            id: list_audio_vip
+                            OneLineListItem:
+                                id: guide_customers
+                                text: "Click để xem danh sách Audio VIP"
+                                on_release: root.list_vip()
+
+
+                Tab:
+                    title:'Users'
+
+                    MDFloatLayout:
+
+                        MDBoxLayout:
+                            orientation: "horizontal"
+                            padding: "10dp"
+                            pos_hint: {"center_x": .5, "center_y": .9}
+                            size_hint: 1, .2
+                            padding: dp(40)
+                            spacing: '20dp'
+                            MDTextField:
+                                id: email_texts
+                                hint_text: "Nhập emal"
+                                text: ""
+                                helper_text_mode: "on_focus"
+                                
+                            MDRaisedButton:
+                                text: "Search"
+                                on_press: root.search_emails()
+                                pos_hint: {"center_y": .7}
+                            
+                        FloatLayout:
+                            pos_hint: {"center_x": .5, "center_y": .45}
+                            size_hint: None, None
+                            size: root.width * 0.6, "400dp"
+                            canvas:
+                                Color:
+                                    rgba: get_color_from_hex("2F406C")
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [25, 25, 25, 25]
+                                Color:
+                                    rgba: Colors.do
+                                Line:
+                                    width: 2
+                                    rounded_rectangle: (self.x, self.y, self.width, self.height, 25)
+                            # DELETE THIS FIELD
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .9}
+                                size_hint: 1, .2
+
+                                MDLabel:
+                                    text: "SETTING CUSTOMER"
+                                    font_size: "26sp"
+                                    halign: "center"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .75}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "account-group"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    text: "Customer"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDDropDownItem:
+                                        id: customer
+                                        pos_hint: {'center_x': .5, 'center_y': .5}
+                                        text: 'Khách hàng'
+                                        on_release: root.customer_menu()
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .6}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "lock-reset"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    text: "Reset Copyright"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: reset_copyright
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: True
+                                        on_active: root.reset_copyright_switch()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .44}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "key-change"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    text: "Reset Key"
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: reset_key
+                                        pos_hint: {'center_x': .5, 'center_y': .33}
+                                        active: True
+                                        on_active: root.reset_key_switch()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .3}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "account-box"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    id: fullname
+                                    text: ""
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .2}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "phone"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    id: phone
+                                    text: ""
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .1}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "numeric"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                MDLabel:
+                                    id: numeric
+                                    text: ""
+                                    font_size: "16sp"
+                                    halign: "left"
+                                    theme_text_color: "Custom"
+                                    text_color: Colors.white
+                                    size_hint: .5, 1
+
+                Tab:
+                    title:'Words'
+                    id: list_document
+                    MDScrollView:
+                        MDList:
+                            id: guide_customer
+                            OneLineListItem:
+                                id: guide_customers
+                                text: "Sửa, xóa tên file Words"
+                                on_release: root.view_document()
+
+                Tab:
+                    title: "Delete"
+                    
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        pos_hint: {"center_y": .5}
+
+                        MDSeparator:
+                            size_hint_y: None
+                            height: "50dp"
+                            md_bg_color: Colors.white
+
+                        MDBoxLayout:
+                            pos_hint: {"center_x": .5, "center_y": .6}
+                            orientation: "vertical"
+                            size_hint: 1, .2
+                            padding: dp(40)
+                            spacing: '20dp'
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                spacing: dp(60)
+
+                                MDTextField:
+                                    id: delete_field_word
+                                    hint_text: "Input name document"
+                                    text: ""
+                                    helper_text_mode: "on_focus"
+
+                                MDRaisedButton:
+                                    text: "Search"
+                                    on_press: root.search_words()
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                spacing: dp(60)
+
+                                MDTextField:
+                                    id: delete_first_num
+                                    pos_hint: {"center_x": .5, "center_y": .8}
+                                    hint_text: "Input first num"
+                                    text: ""
+                                    helper_text_mode: "on_focus"
+                                MDTextField:
+                                    id: delete_end_num
+                                    pos_hint: {"center_x": .5, "center_y": .8}
+                                    hint_text: "Input end num"
+                                    text: ""
+                                    helper_text_mode: "on_focus"
+
+                        MDScrollView:
+                            MDList:
+                                id: search_del
+                                OneLineListItem:
+                                    id: search_list
+                                    text: "DANH SACH TIM KIEM"
+
+                Tab:
+                    title: "Deletes"
+                    
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        pos_hint: {"center_y": .5}
+
+                        MDSeparator:
+                            size_hint_y: None
+                            height: "50dp"
+                            md_bg_color: Colors.white
+
+                        MDBoxLayout:
+                            pos_hint: {"center_x": .5, "center_y": .6}
+                            orientation: "vertical"
+                            size_hint: 1, .2
+                            padding: dp(40)
+                            spacing: '20dp'
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                spacing: dp(60)
+
+                                MDTextField:
+                                    id: delete_field
+                                    hint_text: "Input name document"
+                                    text: ""
+                                    helper_text_mode: "on_focus"
+
+                                MDRaisedButton:
+                                    text: "Search"
+                                    on_press: root.search_delete_fields()
+
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                spacing: dp(60)
+
+                                MDTextField:
+                                    id: delete_center
+                                    pos_hint: {"center_x": .5, "center_y": .8}
+                                    hint_text: "Input first num"
+                                    text: ""
+                                    helper_text_mode: "on_focus"
+
+                        MDScrollView:
+                            MDList:
+                                id: search_delete
+                                OneLineListItem:
+                                    id: search_list
+                                    text: "DANH SACH TIM KIEM"
+
+        BottomBar:
