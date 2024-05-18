@@ -1,0 +1,114 @@
+#: import BottomBar components.uix.bottombar.BottomBar
+#: import Tab components.uix.tab.Tab
+#: import Colors settings.colors.Colors
+
+<Apple_Screen>:
+    name: "apple_screen"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        # (I)
+        MDBoxLayout:
+            orientation: "vertical"
+            MDTabs:
+                id: tab_moi
+                background_color: Colors.white
+                text_color_normal: Colors.den
+                text_color_active: Colors.black
+                indicator_color: Colors.black
+                tab_bar_height: "35dp"
+                font_size: "6sp"
+                Tab:
+                    title:'VIP PDF'
+                    MDScrollView:
+                        MDList:
+                            id: vip_pdf
+                            TwoLineAvatarIconListItem:
+                                id: vip_item
+                                text: "DÀNH CHO TÀI KHOẢN VIP"
+                                secondary_text: "Click ở đây để xem nhiều file nói hơn"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/vip_icon.png"
+                Tab:
+                    title:'VIP Youtube'
+                    MDScrollView:
+                        MDList:
+                            id: vip_youtube
+                            TwoLineAvatarIconListItem:
+                                id: vip_items
+                                text: "DANH CHO TÀI KHOẢN VIP"
+                                secondary_text: "Click ở đây để xem nhiều file nói hơn"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/vip_icon.png"
+
+                Tab:
+                    title:'PDF'
+                    MDScrollView:
+                        MDList:
+                            id: pdf
+                            TwoLineAvatarIconListItem:
+                                id: pdf_item
+                                text: "DÀNH CHO TÀI KHOẢN THƯỜNG"
+                                secondary_text: "Click ở đây để xem nhiều file nói hơn"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/standard.jpg"
+
+                Tab:
+                    title:'Youtube'
+                    MDScrollView:
+                        MDList:
+                            id: youtube
+                            TwoLineAvatarIconListItem:
+                                id: youtube_item
+                                text: "DÀNH CHO TÀI KHOẢN THƯỜNG"
+                                secondary_text: "Click ở đây để xem nhiều file nói hơn"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/standard.jpg"
+                Tab:
+                    id: tab_try
+                    title:'Dùng thử'
+                    MDScrollView:
+                        MDList:
+                            id: trys_you
+                            TwoLineAvatarIconListItem:
+                                id: youtube_try
+                                text: "DÀNH CHO TÀI KHOẢN DÙNG THỬ"
+                                secondary_text: "Click ở đây để xem THỬ 4 FILE NÓI"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/try.png"
+                Tab:
+                    id: guide
+                    title:'Hướng dẫn'
+                    MDScrollView:
+                        MDList:
+                            id: guide_customer
+                            TwoLineAvatarIconListItem:
+                                id: guide_customers
+                                text: "HƯỚNG DẪN ĐĂNG KÍ TÀI KHOẢN VIP, TÀI KHOẢN STANDARD"
+                                secondary_text: "Click ở đây để xem hướng dẫn nhiều hơn nhé!"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/icon.png"
+                # Tab:
+                #     id: totals
+                #     title:'Total Word'
+                #     MDScrollView:
+                #         MDList:
+                #             id: total_word
+                #             TwoLineAvatarIconListItem:
+                #                 id: total_words
+                #                 text: "XEM TỔNG SỐ TỪ MÀ BẠN ĐÃ NGHE, ĐÃ NÓI, ĐÃ XEM THỜI GIAN QUA"
+                #                 secondary_text: "Click ở đây để xem tổng lượng từ vựng bạn đã NÓI nhé!"
+                #                 # on_release: root.total_words()
+                #                 ImageLeftWidget:
+                #                     source: "assets/images/icon.png"
+
+        # (II)
+
+        # (III)
+        BottomBar:
