@@ -1,0 +1,26 @@
+<ChatItem>:
+	ImageLeftWidget:
+		source:root.source
+		radius:self.width/2
+
+	RightContainer:
+		size_hint_y:None
+		height:root.height
+		size_hint_x:None
+		width:dp(70)
+		pos_hint:{'center_x': 0.5, "center_y": 1}
+		MDBoxLayout:
+			orientation:'vertical'
+			adaptive_height:True
+			spacing: dp(15)
+			MDIcon:
+				icon: f"{root.icon}"
+				font_size:dp(24)
+				pos_hint:{'center_x': 0.5, "center_y": 1}
+				theme_text_color: "Custom"
+				text_color: "green"
+			MDLabel:
+				id: count_files
+				pos_hint:{'center_x': 0.5, "center_y": .2}
+				text: f"{root.counts}"
+				font_size:'20dp'
