@@ -1,0 +1,41 @@
+#: import Colors settings.colors.Colors
+
+<BottomBar>:
+    adaptive_height: True
+    height: "50dp"
+    # padding: 0, "40dp", 0, "15dp"
+    spacing: 0
+    md_bg_color: Colors.vang1
+
+    MDBoxLayout:
+        orientation: "vertical"   
+        spacing: 0
+
+        MDIconButton:
+            icon: "home"
+            pos_hint: {"center_x": .5}
+            on_release: app.screen_manager.change_screen("speak_screen")
+
+    MDBoxLayout:
+        orientation: "vertical"   
+        spacing: 0
+        MDIconButton:
+            icon: "cog"
+            pos_hint: {"center_x": .5}
+            on_release: app.screen_manager.change_screen("admin_screen")
+
+    # MDBoxLayout:
+    #     orientation: "vertical"
+    #     spacing: 0
+    #     MDIconButton:
+    #         icon: "twitter"
+    #         pos_hint: {"center_x": .5}
+    #         # on_release: app.screen_manager.change_screen("tag")
+
+    # MDBoxLayout:
+    #     orientation: "vertical"   
+    #     spacing: 0
+    #     MDIconButton:
+    #         icon: "apple"
+    #         pos_hint: {"center_x": .5}
+    #         # on_release: app.screen_manager.change_screen("apple")
