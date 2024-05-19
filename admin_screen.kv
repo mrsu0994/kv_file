@@ -40,7 +40,7 @@
                                 text: "Search"
                                 on_press: root.search_links()
                                 pos_hint: {"center_y": .7}
-                            
+
                         FloatLayout:
                             pos_hint: {"center_x": .5, "center_y": .45}
                             size_hint: None, None
@@ -61,7 +61,7 @@
                             MDBoxLayout:
                                 orientation: "horizontal"
                                 padding: "10dp"
-                                pos_hint: {"center_x": .5, "center_y": .9}
+                                pos_hint: {"center_x": .5, "center_y": .93}
                                 size_hint: 1, .2
 
                                 FloatLayout:
@@ -89,7 +89,7 @@
                             MDBoxLayout:
                                 orientation: "horizontal"
                                 padding: "10dp"
-                                pos_hint: {"center_x": .5, "center_y": .75}
+                                pos_hint: {"center_x": .5, "center_y": .78}
                                 size_hint: 1, .2
 
                                 FloatLayout:
@@ -121,7 +121,7 @@
                             MDBoxLayout:
                                 orientation: "horizontal"
                                 padding: "10dp"
-                                pos_hint: {"center_x": .5, "center_y": .6}
+                                pos_hint: {"center_x": .5, "center_y": .63}
                                 size_hint: 1, .2
 
                                 FloatLayout:
@@ -153,7 +153,7 @@
                             MDBoxLayout:
                                 orientation: "horizontal"
                                 padding: "10dp"
-                                pos_hint: {"center_x": .5, "center_y": .45}
+                                pos_hint: {"center_x": .5, "center_y": .48}
                                 size_hint: 1, .2
 
                                 FloatLayout:
@@ -185,7 +185,7 @@
                             MDBoxLayout:
                                 orientation: "horizontal"
                                 padding: "10dp"
-                                pos_hint: {"center_x": .5, "center_y": .3}
+                                pos_hint: {"center_x": .5, "center_y": .33}
                                 size_hint: 1, .2
 
                                 FloatLayout:
@@ -217,7 +217,7 @@
                             MDBoxLayout:
                                 orientation: "horizontal"
                                 padding: "10dp"
-                                pos_hint: {"center_x": .5, "center_y": .15}
+                                pos_hint: {"center_x": .5, "center_y": .2}
                                 size_hint: 1, .2
 
                                 FloatLayout:
@@ -243,6 +243,28 @@
                                         pos_hint: {'center_x': .5, 'center_y': .33}
                                         active: False
                                         on_active: root.title_audio_switchs()
+                                        track_color_active: "228B22"
+                                        thumb_color_active: "32CD32"
+                            # DELETE ONE AUDIO_____________________________________________________________________
+                            MDBoxLayout:
+                                orientation: "horizontal"
+                                padding: "10dp"
+                                pos_hint: {"center_x": .5, "center_y": .06}
+                                size_hint: 1, .2
+
+                                FloatLayout:
+                                    size_hint: .2, 1
+                                    MDIcon:
+                                        icon: "delete"
+                                        pos_hint: {"center_x": .5, "center_y": .5}
+
+                                FloatLayout:
+                                    size_hint: .3, 1
+                                    MDSwitch:
+                                        id: delete_audio_switch
+                                        pos_hint: {'center_x': .5, "center_y": .33}
+                                        active: False
+                                        on_active: root.delete_audio_switchs()
                                         track_color_active: "228B22"
                                         thumb_color_active: "32CD32"
 
