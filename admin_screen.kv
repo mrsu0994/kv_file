@@ -603,4 +603,18 @@
                                     id: search_list
                                     text: "DANH SACH TIM KIEM"
 
+                Tab:
+                    title:'Backup'
+                    id: backup_firebase
+                    MDFloatLayout:
+                        orientation: "vertical"
+                        pos_hint: {"center_y": .5}
+
+                        MDRaisedButton:
+                            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                            size_hint: None, None
+                            size: dp(150), dp(48)  # Kích thước nút
+                            text: "Backup CSDL"
+                            on_press: root.backup_csdl()
+
         BottomBar:
