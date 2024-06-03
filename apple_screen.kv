@@ -1,0 +1,187 @@
+#: import BottomBar components.uix.bottombar.BottomBar
+#: import Colors settings.colors.Colors
+
+<Apple_Screen>:
+    name: "apple_screen"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        # (I)
+        MDBoxLayout:
+            orientation: "vertical"
+            MDTabs:
+                id: tab_moi
+                background_color: Colors.white
+                text_color_normal: Colors.den
+                text_color_active: Colors.black
+                indicator_color: Colors.black
+                tab_bar_height: "35dp"
+                font_size: "6sp"
+                Tab:
+                    title:'VIP PDF'
+                    MDScrollView:
+                        MDList:
+                            id: vip_pdf
+                            padding: "50dp", "0dp", "50dp", "80dp"
+
+                    MDRelativeLayout:
+                        orientation: 'vertical'
+                        padding: "30dp"
+                        size_hint_y: None
+                        height: "70dp"
+
+                        MDScrollView:
+                            size_hint_y: None
+                            height: "70dp"
+
+                            MDBoxLayout: 
+                                id: list_page_vip_pdf
+                                adaptive_width: True 
+                                padding: "30dp"
+                                spacing: "20dp"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+
+                Tab:
+                    title:'VIP Youtube'
+                    MDScrollView:
+                        MDList:
+                            id: vip_youtube
+                            padding: "50dp", "0dp", "50dp", "80dp"
+
+                    MDRelativeLayout:
+                        orientation: 'vertical'
+                        padding: "30dp"
+                        size_hint_y: None
+                        height: "70dp"
+
+                        MDScrollView:
+                            size_hint_y: None
+                            height: "70dp"
+
+                            MDBoxLayout: 
+                                id: list_page_vip_youtube
+                                adaptive_width: True 
+                                padding: "30dp"
+                                spacing: "20dp"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+
+                Tab:
+                    title:'PDF'
+                    MDScrollView:
+                        MDList:
+                            id: pdf
+                            padding: "50dp", "0dp", "50dp", "80dp"
+
+                    MDRelativeLayout:
+                        orientation: 'vertical'
+                        padding: "30dp"
+                        size_hint_y: None
+                        height: "70dp"
+
+                        MDScrollView:
+                            size_hint_y: None
+                            height: "70dp"
+
+                            MDBoxLayout: 
+                                id: list_page_standar_pdf
+                                adaptive_width: True 
+                                padding: "30dp"
+                                spacing: "20dp"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+
+                Tab:
+                    title:'Youtube'
+                    MDScrollView:
+                        MDList:
+                            id: youtube
+                            padding: "50dp", "0dp", "50dp", "80dp"
+
+                    MDRelativeLayout:
+                        orientation: 'vertical'
+                        padding: "30dp"
+                        size_hint_y: None
+                        height: "70dp"
+
+                        MDScrollView:
+                            size_hint_y: None
+                            height: "70dp"
+
+                            MDBoxLayout: 
+                                id: list_page_standar_youtube
+                                adaptive_width: True 
+                                padding: "30dp"
+                                spacing: "20dp"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+
+                Tab:
+                    id: tab_try
+                    title:'Try'
+                    MDScrollView:
+                        MDList:
+                            id: trys_you
+                            padding: "50dp", "0dp", "50dp", "80dp"
+
+                    MDRelativeLayout:
+                        orientation: 'vertical'
+                        padding: "30dp"
+                        size_hint_y: None
+                        height: "70dp"
+
+                        MDScrollView:
+                            size_hint_y: None
+                            height: "70dp"
+
+                            MDBoxLayout: 
+                                id: list_page_try
+                                adaptive_width: True 
+                                padding: "30dp"
+                                spacing: "20dp"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+
+                Tab:
+                    id: guide
+                    title:'Guide'
+                    MDScrollView:
+                        MDList:
+                            id: guide_customer
+                            TwoLineAvatarIconListItem:
+                                id: guide_customers
+                                text: "HƯỚNG DẪN ĐĂNG KÍ TÀI KHOẢN VIP, TÀI KHOẢN STANDARD"
+                                secondary_text: "Click ở đây để xem hướng dẫn nhiều hơn nhé!"
+                                on_release: root.merge_files()
+                                ImageLeftWidget:
+                                    source: "assets/images/icon.png"
+
+
+                Tab:
+                    id: totals
+                    title: 'Total Word'
+
+                    MDScrollView:
+                        MDList:
+                            id: total
+                            padding: "50dp", "0dp", "50dp", "80dp"
+
+
+                    MDRelativeLayout:
+                        orientation: 'vertical'
+                        padding: "30dp"
+                        size_hint_y: None
+                        height: "70dp"
+
+                        MDScrollView:
+                            size_hint_y: None
+                            height: "70dp"
+
+                            MDBoxLayout: 
+                                id: list_page
+                                adaptive_width: True 
+                                padding: "30dp"
+                                spacing: "20dp"
+                                pos_hint: {"center_x": .5, "center_y": .5}
+
+
+        # (II)
+
+        # (III)
+        BottomBar:
