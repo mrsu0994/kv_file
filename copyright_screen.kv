@@ -8,8 +8,8 @@
     spacing: '10dp'
 
     MDLabel:
-        id: total_word_count_label
-        text: "QUẢNG ĐƯỜNG (hành trình) = VẬN TỐC x THỜI GIAN (S = v.t)"
+        id: try_one
+        text: ""
         halign: "center"
         pos_hint: {"center_y": .9}
         font_size: sp(30)
@@ -18,8 +18,8 @@
         text_color: Colors.black
 
     MDLabel:
-        id: total_word_count_label
-        text: "từ VIỆT NAM đi MỸ thì ĐI BỘ hay MÁY BAY sẽ nhanh?"
+        id: try_two
+        text: ""
         halign: "center"
         pos_hint: {"center_y": .8}
         font_size: sp(30)
@@ -28,8 +28,8 @@
         text_color: Colors.black
 
     MDLabel:
-        id: total_word_count_label
-        text: "ĐƯỜNG NÀO CŨNG VỀ LA MÃ"
+        id: try_three
+        text: ""
         halign: "center"
         pos_hint: {"center_y": .7}
         font_size: sp(30)
@@ -38,15 +38,17 @@
         text_color: Colors.black
 
     MDRaisedButton:
-        text: "Mua Bản Quyền SuSpeak"
+        id: try_four
+        text: ""
         color: Colors.do
         halign: "center"
         pos_hint: {'center_x': 0.5,'center_y': 0.56}
-        on_release: app.screen_manager.change_screen("copyright_buy_screen")
+        on_release: root.buy_copyright_redirect()
         font_size: sp(25)
 
     MDRaisedButton:
-        text: "Dùng Thử"
+        id: try_five
+        text: ""
         color: Colors.do
         halign: "center"
         pos_hint: {'center_x': 0.5,'center_y': 0.44}
@@ -54,8 +56,8 @@
         on_release: root.suspeak_redirect()
 
     MDLabel:
-        id: total_word_count_label
-        text: "ĐI BỘ về La Mã mất 10 năm, XE ĐẠP 5 năm.."
+        id: try_six
+        text: ""
         halign: "center"
         pos_hint: {"center_y": .3}
         font_size: sp(30)
@@ -64,8 +66,8 @@
         text_color: Colors.black
 
     MDLabel:
-        id: total_word_count_label
-        text: "ĐI MÁY BAY về La Mã mất 2 giờ"
+        id: try_seven
+        text: ""
         halign: "center"
         pos_hint: {"center_y": .2}
         font_size: sp(30)
@@ -74,8 +76,8 @@
         text_color: Colors.black
 
     MDLabel:
-        id: total_word_count_label
-        text: "IQ, NĂNG KHIẾU... cũng chỉ là sức người mà thôi"
+        id: try_eight
+        text: ""
         halign: "center"
         pos_hint: {"center_y": .1}
         font_size: sp(30)
